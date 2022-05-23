@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Analysis of DRC Monkeypox Outbreak Data, 2015-2016
+# Monkeypox Clinical Diagnosis Analysis
 
 [![License (for code):
 MIT](https://img.shields.io/badge/License%20(for%20code)-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -33,7 +33,8 @@ this study.
     [{targets}](https://wlandau.github.io/targets-manual/) framework to
     organize build steps for analysis pipeline. The steps are defined in
     the `_targets.R` file and the workflow can be executed by running
-    `run.R` or `run.sh`. This diagram summarizes the pipeline. steps
+    `run.R` via `source("run.R")` in your R terminal or `Rscript run.R`
+    in your system shell.
 
 ``` mermaid
 graph LR
@@ -76,4 +77,11 @@ graph LR
     [{renv}](https://rstudio.github.io/renv/) framework to record R
     package dependencies and versions. Packages used are recorded in
     `renv.lock` and code used to manage dependencies is in `renv/` and
-    other files in the root project directory.
+    other files in the root project directory. On starting an R session
+    in the working directory, run `renv::restore()` to install R package
+    dependencies.
+    -   The package also requires
+        [`cmdstan`](https://mc-stan.org/users/interfaces/cmdstan) to be
+        installed. (Version 2.29.2 was used). If not already installed,
+        run `cmdstanr::install_cmdstan(version = "2.29.2")` after
+        `renv::restore()`
