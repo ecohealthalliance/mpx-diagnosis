@@ -18,8 +18,8 @@ Colebunders, Erik Verheyen Ngonda Daulya, Herwig Leirsh, and Anne
 Laudisoit (2022)
 
 Please cite that paper, and/or the Zenodo data reference
-(\<<https://dx.doi.org/10.5281/zenodo.6574451> \>) when using or
-refering to this study.
+(<https://dx.doi.org/10.5281/zenodo.6574451>) when using or refering to
+this study.
 
 ## Repository Structure and Reproducibility
 
@@ -72,7 +72,7 @@ graph LR
 
 </details>
 
--   This project requires R 4.2.0. This project us the
+-   This project requires R 4.2.0. This project uses the
     [{renv}](https://rstudio.github.io/renv/) framework to record R
     package dependencies and versions. Packages used are recorded in
     `renv.lock` and code used to manage dependencies is in `renv/` and

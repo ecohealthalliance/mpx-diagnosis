@@ -1,5 +1,5 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-.Random.seed|object|9bed998cf9ac43f9|||||||||||||||
+.Random.seed|object|bbf06aa1cecaafc7|||||||||||||||
 analysis_targets|object|2e336b4091fff809|||||||||||||||
 bas_cleaned|stem|9672d0215cc8685d|911c054855f012da|ca795b2afc8ec6e0|502000527||t19134.013386772s|e0bfc4ae288806f1|2809|qs|local|vector|||0.318||
 bas_corrplot|stem|1c7885fb365309f9|a962bd3f73257630|8f530eecb9e2889d|2001114750||t19134.0133883112s|9bcbfa0d110181f5|374010|qs|local|vector|||0.078|the standard deviation is zero. the standard deviation is zero|
@@ -29,6 +29,6 @@ plot_targets|object|136331516be49d36|||||||||||||||
 prep_training_data|function|8c7438362a8af8f6|||||||||||||||
 prep_validate_data|function|ce79786cb6a83f0f|||||||||||||||
 r_file|object|000cdd99ba42c8e1|||||||||||||||
-readme|stem|460d7476b3cb0ffe|03eec8ac03c6c0f9|4745aa592080ea1d|-165896733|README.md*README.Rmd|t19135.8557598585s|172a14c5497c102a|6665|file|local|vector|||9.088||
+readme|stem|0749c856c3045662|03eec8ac03c6c0f9|4745aa592080ea1d|-165896733|README.md*README.Rmd|t19135.859563512s|b2125ac36cf93f96|6663|file|local|vector|||7.845||
 remove_colinear_columns|function|5fa021a26993a1d9|||||||||||||||
 user_rprof|object|67ea4698a37938a9|||||||||||||||
