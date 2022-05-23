@@ -1,0 +1,170 @@
+---
+title: 'Monkeypox Diagnosis: Model Diagnostics'
+author: "Noam Ross"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+
+```{r setup}
+library(tidyverse)
+library(tidybayes)
+library(bayesplot)
+library(scales)
+library(yardstick)
+library(brms)
+library(dbarts)
+library(targets)
+knitr::opts_knit$set(root.dir = here::here())
+```
+
+```{r gettargets}
+tar_load(bas_train)
+tar_load(bas_validate)
+tar_load(bas_train_prepped)
+tar_load(bas_validate_prepped)
+tar_load(bas_linear_model)
+tar_load(bas_dbarts_model)
+```
+
+## Model Summary
+
+```{r formula}
+bas_linear_model$family
+bas_linear_model$formula
+prior_summary(bas_linear_model)
+```
+
+```{r summary}
+bas_sum <- summary(bas_linear_model, prob = 0.8)
+bas_sum
+```
+
+# MCMC Diagnostics
+```{r diagnostics}
+plot(bas_linear_model)
+bayesplot::mcmc_rank_overlay(bas_linear_model)
+```
+
+
+# Model Coefficients
+```{r coefficients}
+draws <- as_draws_df(bas_linear_model) |> 
+  gather_draws(`b_.*`, regex=TRUE) |> 
+  filter(!.variable %in% c("b_Intercept")) |> 
+  mutate(.variable = as.factor(.variable)) |> 
+  mutate(.variable = fct_reorder(.variable, .value, mean)) |> 
+  group_by(.variable) |> 
+  mutate(sig = (sum(.value > 0)/n()) > 0.95 | (sum(.value > 0)/n()) < 0.05) |> 
+  ungroup() |> 
+  mutate(.variable = if_else(sig, paste0(.variable, "*"), as.character(.variable)))
+  
+
+cplot <- ggplot(draws,
+                aes(y = fct_reorder(.variable, .value, mean), x = .value, fill = stat((x > 0)))) +
+  stat_halfeye(p_limits = c(0.01, 0.99)) +
+  scale_x_continuous(limits = c(min(bas_sum$fixed[[3]]), max(bas_sum$fixed[[4]])))
+cplot
+
+draws |> 
+  group_by(.variable) |> 
+  summarize(
+    mean_value = mean(.value),
+    frac_pos = sum(.value > 0)/n()
+  ) |> 
+  arrange(frac_pos) |> 
+  print(n = Inf)
+```
+
+# Prediction
+
+In-Sample:
+
+```{r}
+predictions_in <- bas_train_prepped |> 
+  bind_cols(predict(bas_linear_model)) |> 
+  mutate(pred = factor(as.integer(Estimate > 0.5), levels = c("0", "1"))) |> 
+  mutate(true = factor(mpx_pcr_pos, levels = c("0", "1")))
+cmat_in <- conf_mat(predictions_in, truth = true, estimate = pred)
+cmat_in
+summary(cmat_in)
+
+roc_dat_in <- roc_curve(predictions_in, true, Estimate, event_level = "second")
+roc_auc(predictions_in, true, Estimate, event_level = "second")
+ggplot(roc_dat_in, aes(x = 1 - specificity, y = sensitivity)) +
+  geom_path() +
+  geom_abline(lty=3) +
+  coord_equal() +
+  theme_bw()
+
+```
+
+Out-Of-Sample:
+
+```{r}
+predictions_out <- bas_validate_prepped |> 
+  bind_cols(predict(bas_linear_model, newdata = bas_validate_prepped)) |> 
+  mutate(pred = factor(as.integer(Estimate > 0.5), levels = c("0", "1"))) |> 
+  mutate(true = factor(mpx_pcr_pos, levels = c("0", "1")))
+cmat_out <- conf_mat(predictions_out, truth = true, estimate = pred)
+cmat_out
+summary(cmat_out)
+
+
+roc_dat_out <- roc_curve(predictions_out, true, Estimate, event_level = "second")
+roc_auc(predictions_out, true, Estimate, event_level = "second")
+
+ggplot(roc_dat_out, aes(x = 1 - specificity, y = sensitivity)) +
+  geom_path() +
+  geom_abline(lty=3) +
+  coord_equal() +
+  theme_bw()
+```
+
+<!-- ## BART Model 
+Unused.
+-->
+
+```{r, eval = FALSE, include = FALSE}
+predictions_in_d <- bas_train_prepped |> 
+  mutate(Estimate = colMeans(predict(bas_dbarts_model, newdata = bas_train_prepped))) |> 
+  mutate(pred = factor(as.integer(Estimate > 0.5), levels = c("0", "1"))) |> 
+  mutate(true = factor(mpx_pcr_pos, levels = c("0", "1")))
+          
+cmat_in_d <- conf_mat(predictions_in_d, truth = true, estimate = pred)
+cmat_in_d
+summary(cmat_in_d)
+
+roc_dat_in <- roc_curve(predictions_in_d, true, Estimate, event_level = "second")
+roc_auc(predictions_in_d, true, Estimate, event_level = "second")
+ggplot(roc_dat_in, aes(x = 1 - specificity, y = sensitivity)) +
+  geom_path() +
+  geom_abline(lty=3) +
+  coord_equal() +
+  theme_bw()
+```
+
+
+```{r, eval = FALSE, include = FALSE}
+predictions_out_d <- bas_validate_prepped |> 
+  mutate(Estimate = colMeans(predict(bas_dbarts_model, newdata = bas_validate_prepped))) |> 
+  mutate(pred = factor(as.integer(Estimate > 0.5), levels = c("0", "1"))) |> 
+  mutate(true = factor(mpx_pcr_pos, levels = c("0", "1")))
+          
+cmat_out_d <- conf_mat(predictions_out_d, truth = true, estimate = pred)
+cmat_out_d
+summary(cmat_out_d)
+
+roc_dat_in <- roc_curve(predictions_out_d, true, Estimate, event_level = "second")
+roc_auc(predictions_out_d, true, Estimate, event_level = "second")
+ggplot(roc_dat_in, aes(x = 1 - specificity, y = sensitivity)) +
+  geom_path() +
+  geom_abline(lty=3) +
+  coord_equal() +
+  theme_bw()
+```
+
+
+
+
+

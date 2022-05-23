@@ -1,0 +1,57 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Analysis of DRC Monkeypox Outbreak Data, 2015-2016
+
+[![License (for code): MIT](https://img.shields.io/badge/License (for code)-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![License: CC0-1.0](https://img.shields.io/badge/License (for data)-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
+
+This repository contains data and R code which are supplements to
+
+_Enhanced surveillance of monkeypox in Bas-Uélé, Democratic Republic of Congo: the limitations of symptom-based case definitions_, by
+Gaspard Mande, Innocent Akonda, Anja De Weggheleire, Isabel Brosius, Laurens Liesenborghs, Emmanuel Bottieau, Noam Ross, Guy -Crispin Gembue, Robert Colebunders, Erik Verheyen Ngonda Daulya, Herwig Leirsh, and Anne Laudisoit (2022)
+
+Please cite that paper, and/or the Zenodo data reference (<10.5281/zenodo.6574451>)
+when using or refering to this study.
+
+## Repository Structure and Reproducibility
+
+-   `data/` contains de-identified data from the study and a data dictionary
+-   `R/` contains functions used in this analysis. 
+-   `reports/` contains literate code foor  R Markdown reports generated in the analysis
+-   `outputs/` contains compiled reports and figures.
+-   This project uses the [{targets}](https://wlandau.github.io/targets-manual/) 
+    framework to organize build steps.  The diagram of steps is below and
+    is defined in the `_targets.R` file and the workflow can be executed by running
+    `run.R` or `run.sh`.
+
+    <details>
+    <summary>Diagram of Pipeline Dependency Graph</summary>
+    
+    The code below generates a figure using `mermaid.js` and is rendered when viewing
+    on GitHub
+    ```{r, echo=FALSE, results='asis'}
+    cat(
+      "```mermaid",
+      targets::tar_mermaid(targets_only = TRUE),
+      "```",
+      sep = "\n"
+    )
+    ```
+    </details>
+
+
+-   This project requires R 4.2.0. This project us the [{renv}](https://rstudio.github.io/renv/) framework to 
+    record R package dependencies and versions. Packages used are recorded in 
+    `renv.lock` and code used to manage dependencies is in `renv/` and other files
+    in the root project directory.

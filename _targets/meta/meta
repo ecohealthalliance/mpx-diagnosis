@@ -1,0 +1,34 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+.Random.seed|object|f49ac3173aefa437|||||||||||||||
+analysis_targets|object|2e336b4091fff809|||||||||||||||
+bas_cleaned|stem|9672d0215cc8685d|911c054855f012da|ca795b2afc8ec6e0|502000527||t19134.013386772s|e0bfc4ae288806f1|2809|qs|local|vector|||0.318||
+bas_corrplot|stem|1c7885fb365309f9|a962bd3f73257630|8f530eecb9e2889d|2001114750||t19134.0133883112s|9bcbfa0d110181f5|374010|qs|local|vector|||0.078|the standard deviation is zero. the standard deviation is zero|
+bas_data|stem|843f6d9d9f53a13d|e82fcd9386ec82d8|31ede70c23d82d77|1121804813||t19135.8452124471s|efa976fde3fa1a97|156944|qs|local|vector|||0.227||
+bas_dbarts_model|stem|c2177116782be48f|a3804f43dda2eb7f|4df318a8ccd7df0f|132301981||t19134.1105030993s|8ad4a2eab76be3dc|8381153|qs|local|vector|||108.22||
+bas_excel|stem|ae3bdb9264478943|abce9e960005ee9b|ef46db3751d8e999|1441302930|data/datbase_MPX_final_948.xls|t19135.7620232256s|e739f07f77be4621|1634304|file|local|vector|||0.002||
+bas_linear_model|stem|dc7c253cf5c3545f|1f526697f57c1839|f468096f5e2fb041|-2035891906||t19134.0277478153s|2a6fb68cfc3c9e91|7284610|qs|local|vector|||41.067||
+bas_lm_coefplot|stem|198089dbdb8b3592|abb0bca5e364a2da|2d36f0577160476f|235117391||t19135.7228715497s|f0a5031dab5499f1|18725935|qs|local|vector|||3.677||
+bas_split|stem|8f68db855528f275|850898a5edd2a332|77d4a27a3540a3a2|-1017696714||t19134.0133888331s|943c3efceab70256|3170|qs|local|vector|||0.028||
+bas_train|stem|d7de558db1e7065c|06facb520ef72b64|b61fd776c1f8643e|181019425||t19134.0134011744s|0894a896d54ea448|2089|qs|local|vector|||0.003||
+bas_train_prepped|stem|ca0df05a760844fb|9ea033d2cdf2ab35|814fa95f05201e75|-2140241195||t19134.0134109918s|a81f33f7aaf4a844|3589|qs|local|vector|||0.83|progress_estimated was deprecated in dplyr 1.0.0.. progress_estimated was deprecated in dplyr 1.0.0.. progress_estimated was deprecated in dplyr 1.0.0.. progress_estimated was deprecated in dplyr 1.0.0.|
+bas_validate|stem|b3c4d5d4d3da3882|352c5ed0b4272420|1d271ff3f290e697|-998641873||t19134.0134009474s|72a3e0bfc0e9f469|1188|qs|local|vector|||0.004||
+bas_validate_prepped|stem|6f458c3c4777033d|03288f360244580c|d94c7700fa92d16b|986640005||t19134.0134213341s|9f93cdbb878ee5e8|2250|qs|local|vector|||0.119||
+bas_var_names|object|a4445ee5a2dbaa75|||||||||||||||
+clean_bas_data|function|f6584752cbdc2b12|||||||||||||||
+corrplot_file|stem|fa0f6718fc651491|55d55d132da7d8a8|ec230e3df2ef33ac|348021987|outputs/bas_corrplot.png|t19135.7148923063s|7f8ced6b3470f9d7|695594|file|local|vector|||1.015||
+data_targets|object|1cfe418532971555|||||||||||||||
+fit_bas_dbarts|function|96b22d50ed134e9e|||||||||||||||
+fit_bas_linear|function|1a0158af9551d28a|||||||||||||||
+lm_coefplot_file|stem|c138945ec1937f90|5b705b34a6374772|064bbc2489ed9d7b|-3781850|outputs/bas_lm_coefplot.png|t19135.7229287182s|f2a0cffc08b69fcb|751452|file|local|vector|||4.899|Removed 7520 rows containing missing values stat_slabinterval.|
+make_bas_corrplot|function|27e07c719908f270|||||||||||||||
+make_lm_coefplot|function|6a29597c33aa58bf|||||||||||||||
+make_matrix|function|43f63907e0897541|||||||||||||||
+model_diagnostics|stem|43a32eeec74cc286|f1662c45b274c0b9|873ab5036f657bbb|-2086566065|outputs/model-diagnostics.html*reports/model-diagnostics.Rmd|t19135.8461006893s|9672c0195032cb5e|4777786|file|local|vector|||76.852||
+output_targets|object|a5565c45246d96bb|||||||||||||||
+plot_targets|object|136331516be49d36|||||||||||||||
+prep_training_data|function|8c7438362a8af8f6|||||||||||||||
+prep_validate_data|function|ce79786cb6a83f0f|||||||||||||||
+r_file|object|000cdd99ba42c8e1|||||||||||||||
+readme|stem|6c7aa7716ebf2f5b|03eec8ac03c6c0f9|4745aa592080ea1d|-165896733|README.md*README.Rmd|t19135.8451976479s|a6d904b8d6e47088|7287|file|local|vector|||6.892||
+remove_colinear_columns|function|5fa021a26993a1d9|||||||||||||||
+user_rprof|object|67ea4698a37938a9|||||||||||||||
