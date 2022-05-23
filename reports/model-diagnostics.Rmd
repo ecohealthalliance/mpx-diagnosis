@@ -13,7 +13,6 @@ library(bayesplot)
 library(scales)
 library(yardstick)
 library(brms)
-library(dbarts)
 library(targets)
 knitr::opts_knit$set(root.dir = here::here())
 ```
@@ -24,7 +23,6 @@ tar_load(bas_validate)
 tar_load(bas_train_prepped)
 tar_load(bas_validate_prepped)
 tar_load(bas_linear_model)
-tar_load(bas_dbarts_model)
 ```
 
 ## Model Summary
@@ -126,42 +124,42 @@ Unused.
 -->
 
 ```{r, eval = FALSE, include = FALSE}
-predictions_in_d <- bas_train_prepped |> 
-  mutate(Estimate = colMeans(predict(bas_dbarts_model, newdata = bas_train_prepped))) |> 
-  mutate(pred = factor(as.integer(Estimate > 0.5), levels = c("0", "1"))) |> 
-  mutate(true = factor(mpx_pcr_pos, levels = c("0", "1")))
-          
-cmat_in_d <- conf_mat(predictions_in_d, truth = true, estimate = pred)
-cmat_in_d
-summary(cmat_in_d)
-
-roc_dat_in <- roc_curve(predictions_in_d, true, Estimate, event_level = "second")
-roc_auc(predictions_in_d, true, Estimate, event_level = "second")
-ggplot(roc_dat_in, aes(x = 1 - specificity, y = sensitivity)) +
-  geom_path() +
-  geom_abline(lty=3) +
-  coord_equal() +
-  theme_bw()
+#predictions_in_d <- bas_train_prepped |> 
+#  mutate(Estimate = colMeans(predict(bas_dbarts_model, newdata = bas_train_prepped))) |> 
+#  mutate(pred = factor(as.integer(Estimate > 0.5), levels = c("0", "1"))) |> 
+#  mutate(true = factor(mpx_pcr_pos, levels = c("0", "1")))
+#          
+#cmat_in_d <- conf_mat(predictions_in_d, truth = true, estimate = pred)
+#cmat_in_d
+#summary(cmat_in_d)
+#
+#roc_dat_in <- roc_curve(predictions_in_d, true, Estimate, event_level = "second")
+#roc_auc(predictions_in_d, true, Estimate, event_level = "second")
+#ggplot(roc_dat_in, aes(x = 1 - specificity, y = sensitivity)) +
+#  geom_path() +
+#  geom_abline(lty=3) +
+#  coord_equal() +
+#  theme_bw()
 ```
 
 
 ```{r, eval = FALSE, include = FALSE}
-predictions_out_d <- bas_validate_prepped |> 
-  mutate(Estimate = colMeans(predict(bas_dbarts_model, newdata = bas_validate_prepped))) |> 
-  mutate(pred = factor(as.integer(Estimate > 0.5), levels = c("0", "1"))) |> 
-  mutate(true = factor(mpx_pcr_pos, levels = c("0", "1")))
-          
-cmat_out_d <- conf_mat(predictions_out_d, truth = true, estimate = pred)
-cmat_out_d
-summary(cmat_out_d)
-
-roc_dat_in <- roc_curve(predictions_out_d, true, Estimate, event_level = "second")
-roc_auc(predictions_out_d, true, Estimate, event_level = "second")
-ggplot(roc_dat_in, aes(x = 1 - specificity, y = sensitivity)) +
-  geom_path() +
-  geom_abline(lty=3) +
-  coord_equal() +
-  theme_bw()
+#predictions_out_d <- bas_validate_prepped |> 
+#  mutate(Estimate = colMeans(predict(bas_dbarts_model, newdata = bas_validate_prepped))) |> 
+#  mutate(pred = factor(as.integer(Estimate > 0.5), levels = c("0", "1"))) |> 
+#  mutate(true = factor(mpx_pcr_pos, levels = c("0", "1")))
+#          
+#cmat_out_d <- conf_mat(predictions_out_d, truth = true, estimate = pred)
+#cmat_out_d
+#summary(cmat_out_d)
+#
+#roc_dat_in <- roc_curve(predictions_out_d, true, Estimate, event_level = "second")
+#roc_auc(predictions_out_d, true, Estimate, event_level = "second")
+#ggplot(roc_dat_in, aes(x = 1 - specificity, y = sensitivity)) +
+#  geom_path() +
+#  geom_abline(lty=3) +
+#  coord_equal() +
+#  theme_bw()
 ```
 
 
