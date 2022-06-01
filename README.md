@@ -3,6 +3,7 @@
 
 # Monkeypox Clinical Diagnosis Analysis
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6603201.svg)](https://doi.org/10.5281/zenodo.6603201)
 [![License (for code):
 MIT](https://img.shields.io/badge/License%20(for%20code)-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![License:
@@ -72,8 +73,6 @@ graph LR
   linkStyle 1 stroke-width:0px;
   linkStyle 20 stroke-width:0px;
 ```
-
-</details>
 
 -   This project requires R 4.2.0. This poject uses the
     [{renv}](https://rstudio.github.io/renv/) framework to record R

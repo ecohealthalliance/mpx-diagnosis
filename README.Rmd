@@ -13,6 +13,9 @@ knitr::opts_chunk$set(
 
 # Monkeypox Clinical Diagnosis Analysis
 
+
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6603201.svg)](https://doi.org/10.5281/zenodo.6603201)
 [![License (for code): MIT](https://img.shields.io/badge/License (for code)-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![License: CC0-1.0](https://img.shields.io/badge/License (for data)-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 
@@ -47,8 +50,6 @@ cat(
   sep = "\n"
 )
 ```
-</details>
-
 
 -   This project requires R 4.2.0. This poject uses the [{renv}](https://rstudio.github.io/renv/) framework to 
     record R package dependencies and versions. Packages used are recorded in 
