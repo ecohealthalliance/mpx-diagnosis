@@ -37,7 +37,10 @@ referring to this study.
     organize build steps for analysis pipeline. The steps are defined in
     the `_targets.R` file and the workflow can be executed by running
     `run.R` via `source("run.R")` in your R terminal or `Rscript run.R`
-    in your system shell.
+    in your system shell. The schematic figure below summarizes the
+    steps. (It uses `mermaid.js` syntax and should display as a graph on
+    GitHub. It can also we viewed by pasting the code into
+    <https://mermaid.live>.)
 
 ``` mermaid
 graph LR
