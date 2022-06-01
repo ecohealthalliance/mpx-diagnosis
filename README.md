@@ -8,7 +8,7 @@ MIT](https://img.shields.io/badge/License%20(for%20code)-MIT-blue.svg)](https://
 [![License:
 CC0-1.0](https://img.shields.io/badge/License%20(for%20data)-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 
-This repository contains data and R code which are supplements to
+This repository contains data and R code which are supplements to:
 
 *Enhanced surveillance of monkeypox in Bas-Uélé, Democratic Republic of
 Congo: the limitations of symptom-based case definitions*, by Gaspard
@@ -18,13 +18,15 @@ Colebunders, Erik Verheyen Ngonda Daulya, Herwig Leirsh, and Anne
 Laudisoit (2022)
 
 Please cite that paper, and/or the Zenodo data reference
-(<https://dx.doi.org/10.5281/zenodo.6574451>) when using or refering to
-this study.
+(<https://dx.doi.org/10.5281/zenodo.6574451>) when using data or
+referring to this study.
 
 ## Repository Structure and Reproducibility
 
--   `data/` contains de-identified data from the study and a data
-    dictionary
+-   `data/datbase_MPX_final_948.xls` contains data from the study and a
+    data dictionary describing all variables. Data are de-indentified;
+    variables collected but removed to anonymize data are described in
+    the data dictionary.
 -   `R/` contains functions used in this analysis.
 -   `reports/` contains literate code foor R Markdown reports generated
     in the analysis
@@ -73,7 +75,7 @@ graph LR
 
 </details>
 
--   This project requires R 4.2.0. This project uses the
+-   This project requires R 4.2.0. This poject uses the
     [{renv}](https://rstudio.github.io/renv/) framework to record R
     package dependencies and versions. Packages used are recorded in
     `renv.lock` and code used to manage dependencies is in `renv/` and

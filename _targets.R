@@ -13,7 +13,7 @@ tar_option_set(
 
 data_targets <- tar_plan(
   tar_file(bas_excel, "data/datbase_MPX_final_948.xls"),
-  bas_data = read_xls(bas_excel,sheet = "Sheet1"),
+  bas_data = read_xls(bas_excel,sheet = "Data"),
   bas_cleaned = clean_bas_data(bas_data),
   bas_split = initial_split(bas_cleaned, prop = 0.749, strata = "mpx_pcr_pos"),
   bas_train = training(bas_split),
