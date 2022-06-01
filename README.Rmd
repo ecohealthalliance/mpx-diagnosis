@@ -34,7 +34,7 @@ when using data or referring to this study.
     variables collected but removed to anonymize data are described in the
     data dictionary.
 -   `R/` contains functions used in this analysis. 
--   `reports/` contains literate code foor  R Markdown reports generated in the analysis
+-   `reports/` contains literate code for  R Markdown reports generated in the analysis
 -   `outputs/` contains compiled reports and figures.
 -   This project uses the [{targets}](https://wlandau.github.io/targets-manual/) 
     framework to organize build steps for analysis pipeline.  The steps are
