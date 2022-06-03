@@ -3,7 +3,7 @@
 
 # Monkeypox Clinical Diagnosis Analysis
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6603201.svg)](https://doi.org/10.5281/zenodo.6603201)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6574450.svg)](https://doi.org/10.5281/zenodo.6574450)
 [![License (for code):
 MIT](https://img.shields.io/badge/License%20(for%20code)-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![License:
@@ -19,8 +19,8 @@ Colebunders, Erik Verheyen Ngonda Daulya, Herwig Leirsh, and Anne
 Laudisoit (2022)
 
 Please cite that paper, and/or the Zenodo data reference
-(<https://dx.doi.org/10.5281/zenodo.6574451>) when using data or
-referring to this study.
+(<https://doi.org/10.5281/zenodo.6574450>) when using data or referring
+to this study.
 
 ## Repository Structure and Reproducibility
 

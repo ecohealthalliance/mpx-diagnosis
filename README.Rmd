@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 
 
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6603201.svg)](https://doi.org/10.5281/zenodo.6603201)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6574450.svg)](https://doi.org/10.5281/zenodo.6574450)
 [![License (for code): MIT](https://img.shields.io/badge/License (for code)-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![License: CC0-1.0](https://img.shields.io/badge/License (for data)-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 
@@ -24,7 +24,7 @@ This repository contains data and R code which are supplements to:
 _Enhanced surveillance of monkeypox in Bas-Uélé, Democratic Republic of Congo: the limitations of symptom-based case definitions_, by
 Gaspard Mande, Innocent Akonda, Anja De Weggheleire, Isabel Brosius, Laurens Liesenborghs, Emmanuel Bottieau, Noam Ross, Guy -Crispin Gembue, Robert Colebunders, Erik Verheyen Ngonda Daulya, Herwig Leirsh, and Anne Laudisoit (2022)
 
-Please cite that paper, and/or the Zenodo data reference (<https://dx.doi.org/10.5281/zenodo.6574451>)
+Please cite that paper, and/or the Zenodo data reference (<https://doi.org/10.5281/zenodo.6574450>)
 when using data or referring to this study.
 
 ## Repository Structure and Reproducibility
