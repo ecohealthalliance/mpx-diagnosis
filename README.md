@@ -11,12 +11,13 @@ CC0-1.0](https://img.shields.io/badge/License%20(for%20data)-CC0_1.0-lightgrey.s
 
 This repository contains data and R code which are supplements to:
 
-Mande, G., I. Akonda, A. De Weggheleire, I. Brosius, L. Liesenborghs, E.
-Bottieau, N. Ross, G.-C. Gembu, R. Colebunders, E. Verheyen, N. Daulya,
-H. Leirs, and A. Laudisoit (2022). *Enhanced surveillance of monkeypox
-in Bas-Uele, Democratic Republic of Congo: the limitations of
-symptom-based case definitions.* medRxiv.
-<https://doi.org/10.1101/2022.06.03.22275815>
+Gaspard Mande, Innocent Akonda, Anja De Weggheleire, Isabel Brosius,
+Laurens Liesenborghs, Emmanuel Bottieau, Noam Ross, Guy -Crispin Gembu,
+Robert Colebunders, Erik Verheyen, Ngonda Dauly, Herwig Leirs, Anne
+Laudisoit (2022),*Enhanced surveillance of monkeypox in Bas-Uélé,
+Democratic Republic of Congo: the limitations of symptom-based case
+definitions* International Journal of Infectious Diseases
+<https://doi.org/10.1016/j.ijid.2022.06.060>.
 
 Please cite that paper, and/or the Zenodo data reference
 (<https://doi.org/10.5281/zenodo.6574450>) when using data or referring
@@ -53,7 +54,7 @@ to this study.
 
 ``` mermaid
 graph LR
-  subgraph Legend
+  subgraph legend
     x7420bd9270f8d27d([""Up to date""]):::uptodate --- x5b3426b4c7fa7dbc([""Started""]):::started
     x5b3426b4c7fa7dbc([""Started""]):::started --- xbf4603d6c2c2ad6b([""Stem""]):::none
   end
